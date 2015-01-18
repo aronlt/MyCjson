@@ -1,12 +1,12 @@
 MyCjson
 =======
-²ÉÓÃC++ÓïÑÔÖØÐ´ÁËCJson£¨http://sourceforge.net/projects/cjson/£©
+é‡‡ç”¨C++è¯­è¨€é‡å†™äº†[CJson](http://sourceforge.net/projects/cjson/).
 -------
-ÖØÐ´ÄÚÈÝ£º<br/>
-1:ObjectÀàÐÍ²ÉÓÃMap´æ´¢×ÓÔªËØ£¬¿ÉÒÔ·½±ã²éÕÒ¶ÔÏó<br/>
-2:ArrayÀàÐÍ²ÉÓÃVector´æ´¢×ÓÔªËØ<br/>
-3£º²ÉÓÃvector<char>Ìæ´úchar*£¬´Ó¶ø±ÜÃâÁË·±ËöµÄÄÚ´æ¹ÜÀí<br/>
-Ê¹ÓÃ·½Ê½£º
+é‡å†™å†…å®¹ï¼š<br/>
+1:Objectç±»åž‹é‡‡ç”¨Mapå­˜å‚¨å­å…ƒç´ ï¼Œå¯ä»¥æ–¹ä¾¿æŸ¥æ‰¾å¯¹è±¡<br/>
+2:Arrayç±»åž‹é‡‡ç”¨Vectorå­˜å‚¨å­å…ƒç´ <br/>
+3ï¼šé‡‡ç”¨vector<char>æ›¿ä»£char*ï¼Œä»Žè€Œé¿å…äº†ç¹ççš„å†…å­˜ç®¡ç†<br/>
+ä½¿ç”¨æ–¹å¼ï¼š
 ```c++
 #include <vector>
 #include <iostream>
@@ -25,5 +25,5 @@ int main(){
 	return 0;
 }
 ```
-¾ßÌåµÄÊ¹ÓÃ·½Ê½¼û²âÊÔÎÄ¼þ
+å…·ä½“çš„ä½¿ç”¨æ–¹å¼è§æµ‹è¯•æ–‡ä»¶
 --------
