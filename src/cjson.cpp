@@ -101,4 +101,8 @@ namespace MyCJson{
 	const char * CBaseItem::Parse(const char *pStr){
 		return nullptr;
 	}
+
+	void CBaseItem::Print(CHAR_VEC &container, int depth /*= 0*/){
+	}
+
 }

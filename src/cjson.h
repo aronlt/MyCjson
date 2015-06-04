@@ -44,7 +44,7 @@ namespace MyCJson{
 		virtual const char *Parse(const char *pStr);
 
 		//convert Item into string
-		virtual void Print(CHAR_VEC &container, int depth = 0) = 0;
+		virtual void Print(CHAR_VEC &container, int depth = 0);
 
 	protected:
 		CHAR_VEC *pName;

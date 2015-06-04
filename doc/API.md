@@ -1,89 +1,96 @@
-#####MyCjson²ÉÓÃC++ÓïÑÔ£¬Ê¹ÓÃC++11ĞÂÌØĞÔ£¬ÒÔ¼°STL¿âµÈ¶ÔCJsonÈí¼ş½øĞĞÁËÖØĞ´£¬Ê¹µÃÖØĞ´ºóµÄÈí¼ş¸ü¾ßÓĞOOPÌØĞÔ£¬¶øÇÒÒ²¸ü·½±ãÊ¹ÓÃºÍÀ©Õ¹¡£<br/>MyCjson²ÉÓÃgoogle testµ¥Ôª²âÊÔ¿ò¼Ü½øĞĞÁË²âÊÔ¡£
+ï»¿#####MyCjsoné‡‡ç”¨C++è¯­è¨€ï¼Œä½¿ç”¨C++11æ–°ç‰¹æ€§ï¼Œä»¥åŠSTLåº“ç­‰å¯¹CJsonè½¯ä»¶è¿›è¡Œäº†é‡å†™ï¼Œä½¿å¾—é‡å†™åçš„è½¯ä»¶æ›´å…·æœ‰OOPç‰¹æ€§ï¼Œè€Œä¸”ä¹Ÿæ›´æ–¹ä¾¿ä½¿ç”¨å’Œæ‰©å±•ã€‚<br/>MyCjsoné‡‡ç”¨google testå•å…ƒæµ‹è¯•æ¡†æ¶è¿›è¡Œäº†æµ‹è¯•ã€‚
 
-###ÈçºÎÊ¹ÓÃ£¿
+###å¦‚ä½•ä½¿ç”¨ï¼Ÿ
+BaseItem:**<br/>
+`ParseRet PraseValue(const char *value);`<br/>
+å°†const char\*å­—ç¬¦ä¸²è§£ææˆç›¸åº”çš„Jsonæ ¼å¼<br/>
+<br/>
+`char * PrintValue(CBaseItem *item, int depth, int fmt);`<br/>
+å°†Jsonæ•°æ®è½¬æ¢ä¸ºconst char\*å½¢å¼è¿”å›<br/>
+<br/>
 **CObjectItem:**<br/>
 `const char* Parse(const char *value):`<br/>
-´«Èëconst char *×Ö·û´®£¬½«Æä½âÎöÎªObjectÀàĞÍ£¬·µ»Ø½âÎöºóÊ£ÏÂµÄ×Ö·û´®,Èç¹û½âÎöÊ§°Ü£¬·µ»Ønullptr¡£<br/>
+ä¼ å…¥const char \*å­—ç¬¦ä¸²ï¼Œå°†å…¶è§£æä¸ºObjectç±»å‹ï¼Œè¿”å›è§£æåå‰©ä¸‹çš„å­—ç¬¦ä¸²,å¦‚æœè§£æå¤±è´¥ï¼Œè¿”å›nullptrã€‚<br/>
 <br/>
 `void Print(CHAR_VEC &container, int depth = 0):`<br/>
-ÒÔ×Ö·ûĞÎÊ½´òÓ¡ObjectµÄÄÚÈİ£¬½«½á¹û·ÅÈëcontainerÖĞ£¬ÆäÖĞCHAR_VEC±íÊ¾vector<char>ÈİÆ÷¡£depth±íÊ¾Ëõ½ø²ã´Î<br/>
+ä»¥å­—ç¬¦å½¢å¼æ‰“å°Objectçš„å†…å®¹ï¼Œå°†ç»“æœæ”¾å…¥containerä¸­ï¼Œå…¶ä¸­CHAR_VECè¡¨ç¤ºvector<char>å®¹å™¨ã€‚depthè¡¨ç¤ºç¼©è¿›å±‚æ¬¡<br/>
 <br/>
 `void AddItem(const char* name, CBaseItem *item);`<br/>
-½«¶ÔÏóÌí¼Óµ½ObjectÖĞ£¬name±íÊ¾¶ÔÏóµÄkey£¬item±íÊ¾¶ÔÏóµÄvalue<br/>
+å°†å¯¹è±¡æ·»åŠ åˆ°Objectä¸­ï¼Œnameè¡¨ç¤ºå¯¹è±¡çš„keyï¼Œitemè¡¨ç¤ºå¯¹è±¡çš„value<br/>
 <br/>
 `CBaseItem *GetItem(const char *str);`<br/>
-¸ù¾İkey(¿ÉÒÔÊÇÒÔ×Ö·û´®ĞÎÊ½´æ´¢),»ñÈ¡¶ÔÏóµÄvalue<br/>
+æ ¹æ®key(å¯ä»¥æ˜¯ä»¥å­—ç¬¦ä¸²å½¢å¼å­˜å‚¨),è·å–å¯¹è±¡çš„value<br/>
 <br/>
 `CBaseItem* DetachItem(const char *str);`<br/>
-¸ù¾İkey½â³ı¶ÔÏó£¬²¢·µ»Ø¶ÔÏóµÄÖµ<br/>
+æ ¹æ®keyè§£é™¤å¯¹è±¡ï¼Œå¹¶è¿”å›å¯¹è±¡çš„å€¼<br/>
 <br/>
 `void DeleteItem(const char *str);`<br/>
-¸ù¾İkeyÉ¾³ı¶ÔÏó<br/>
+æ ¹æ®keyåˆ é™¤å¯¹è±¡<br/>
 <br/>
 `void ReplaceItem(const char *str, CBaseItem *item);`<br/>
-Ìæ»»¶ÔÏó<br/>
+æ›¿æ¢å¯¹è±¡<br/>
 <br/>
 `static CHAR_VEC StrToVec(const char* str);`<br/>
-½«×Ö·û´®×ª»»ÎªCHAR_VECÀàĞÍ£¨Àà¾²Ì¬·½·¨£©<br/>
+å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºCHAR_VECç±»å‹ï¼ˆç±»é™æ€æ–¹æ³•ï¼‰<br/>
 
 **CArrayItem:**<br/>
 `const char *Parse(const char *value);`<br/>
-´«Èëconst char *×Ö·û´®£¬½«Æä½âÎöÎªArrayÀàĞÍ£¬·µ»Ø½âÎöºóÊ£ÏÂµÄ×Ö·û´®£¬Èç¹û½âÎöÊ§°Ü£¬Ôò·µ»Ønullptr<br/>
+ä¼ å…¥const char \*å­—ç¬¦ä¸²ï¼Œå°†å…¶è§£æä¸ºArrayç±»å‹ï¼Œè¿”å›è§£æåå‰©ä¸‹çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœè§£æå¤±è´¥ï¼Œåˆ™è¿”å›nullptr<br/>
 <br/>
 `void Print(CHAR_VEC &container, int depth = 0);`<br/>
-ÒÔ×Ö·ûĞÎÊ½´òÓ¡Array£¬½«½á¹û·ÅÈëcontainerÖĞ£¬ÆäÖĞCHAR_VEC±íÊ¾vector<char>ÈİÆ÷¡£depth±íÊ¾Ëõ½ø²ã´Î<br/>
+ä»¥å­—ç¬¦å½¢å¼æ‰“å°Arrayï¼Œå°†ç»“æœæ”¾å…¥containerä¸­ï¼Œå…¶ä¸­CHAR_VECè¡¨ç¤ºvector<char>å®¹å™¨ã€‚depthè¡¨ç¤ºç¼©è¿›å±‚æ¬¡<br/>
 <br/>
 `int GetSize();`<br/>
-»ñÈ¡Êı×éµÄ´óĞ¡<br/>
+è·å–æ•°ç»„çš„å¤§å°<br/>
 <br/>
 `void AddItem(CBaseItem *item);`<br/>
-Ìí¼ÓÊı×éÔªËØ <br/>
+æ·»åŠ æ•°ç»„å…ƒç´  <br/>
 <br/>
 `CBaseItem* DetachItem(int idx);`<br/>
-¸ù¾İË÷Òı½â³ı¶ÔÏó£¬·µ»Ø¶ÔÏóµÄÖµ<br/>
+æ ¹æ®ç´¢å¼•è§£é™¤å¯¹è±¡ï¼Œè¿”å›å¯¹è±¡çš„å€¼<br/>
 <br/>
 `CBaseItem* GetItem(int idx);`<br/>
-¸ù¾İË÷Òı»ñÈ¡¶ÔÏóµÄÖµ<br/>
+æ ¹æ®ç´¢å¼•è·å–å¯¹è±¡çš„å€¼<br/>
 <br/>
 `void DeleteItem(int idx);`<br/>
-¸ù¾İË÷ÒıÉ¾³ı¶ÔÏó<br/>
+æ ¹æ®ç´¢å¼•åˆ é™¤å¯¹è±¡<br/>
 <br/>
 `void ReplaceItem(int idx, CBaseItem *item);`<br/>
-¸ù¾İË÷ÒıÌæ»»¶ÔÏó<br/>
+æ ¹æ®ç´¢å¼•æ›¿æ¢å¯¹è±¡<br/>
 
 **CStringItem:**<br/>
 `CHAR_VEC* GetData();`<br/>
-»ñÈ¡CStringItemµÄ×Ö·û´®ÄÚÈİ,ÒÔCHAR_VECĞÎÊ½·µ»Ø<br/>
+è·å–CStringItemçš„å­—ç¬¦ä¸²å†…å®¹,ä»¥CHAR_VECå½¢å¼è¿”å›<br/>
 <br/>
 `const char* Parse(const char *str);`<br/>
-½«const char* ÀàĞÍ×Ö·û´®½âÎöÎªCStringItemÀàĞÍ£¬·µ»Ø½âÎöºóÊ£ÏÂµÄ×Ö·û´®£¬Èç¹û½âÎöÊ§°Ü£¬Ôò·µ»ØnullptrĞÍ<br/>
+å°†const char\* ç±»å‹å­—ç¬¦ä¸²è§£æä¸ºCStringItemç±»å‹ï¼Œè¿”å›è§£æåå‰©ä¸‹çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœè§£æå¤±è´¥ï¼Œåˆ™è¿”å›nullptrå‹<br/>
 <br/>
 `void Print(CHAR_VEC& container, int depth = 0);`<br/>
-ÒÔ×Ö·ûĞÎÊ½´òÓ¡CStringItem£¬½«½á¹û·ÅÈëcontainerÖĞ£¬ÆäÖĞCHAR_VEC±íÊ¾vector<char>ÈİÆ÷¡£depth±íÊ¾Ëõ½ø²ã´Î<br/>
+ä»¥å­—ç¬¦å½¢å¼æ‰“å°CStringItemï¼Œå°†ç»“æœæ”¾å…¥containerä¸­ï¼Œå…¶ä¸­CHAR_VECè¡¨ç¤ºvector<char>å®¹å™¨ã€‚depthè¡¨ç¤ºç¼©è¿›å±‚æ¬¡<br/>
 <br/>
 **CNumberItem:**<br/>
 `const char* Parse(const char *num);`<br/>
-½«const char*ÀàĞÍ×Ö·û´®×ªÎªCNumberItemÀàĞÍ,·µ»Ø½âÎöºóÊ£ÏÂµÄ×Ö·û´®£¬Èç¹û½âÎöÊ§°Ü£¬Ôò·µ»Ønullptr<br/>
+å°†const char\*ç±»å‹å­—ç¬¦ä¸²è½¬ä¸ºCNumberItemç±»å‹,è¿”å›è§£æåå‰©ä¸‹çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœè§£æå¤±è´¥ï¼Œåˆ™è¿”å›nullptr<br/>
 <br/>
 `void Print(CHAR_VEC &container, int depth = 0);`<br/>
-ÒÔ×Ö·ûĞÎÊ½´òÓ¡CNumberItem£¬½«½á¹û·ÅÈëcontainerÖĞ£¬ÆäÖĞCHAR_VEC±íÊ¾vector<char>ÈİÆ÷¡£depth±íÊ¾Ëõ½ø²ã´Î<br/>
+ä»¥å­—ç¬¦å½¢å¼æ‰“å°CNumberItemï¼Œå°†ç»“æœæ”¾å…¥containerä¸­ï¼Œå…¶ä¸­CHAR_VECè¡¨ç¤ºvector<char>å®¹å™¨ã€‚depthè¡¨ç¤ºç¼©è¿›å±‚æ¬¡<br/>
 
 `int GetInt();`<br/>
-ÒÔintµÄĞÎÊ½»ñÈ¡CNumberItemÀàĞÍµÄÖµ¡£<br/>
+ä»¥intçš„å½¢å¼è·å–CNumberItemç±»å‹çš„å€¼ã€‚<br/>
 <br/>
 `double GetDouble();`<br/>
-ÒÔdoubleµÄĞÎÊ½»ñÈ¡CNumberItemÀàĞÍµÄÖµ<br/>
+ä»¥doubleçš„å½¢å¼è·å–CNumberItemç±»å‹çš„å€¼<br/>
 <br/>
 **CBoolItem:**<br/>
 `CBoolItem(bool val);`<br/>
-¹¹ÔìCBoolItemÀàĞÍ£¬´«ÈëboolÖµ<br/>
+æ„é€ CBoolItemç±»å‹ï¼Œä¼ å…¥boolå€¼<br/>
 <br/>
 `bool GetBool()`<br/>
-»ñÈ¡CBoolItemµÄÖµ	<br/>
+è·å–CBoolItemçš„å€¼	<br/>
 <br/>
 `void Print(CHAR_VEC& container, int depth = 0);`<br/>
-ÒÔ×Ö·ûĞÎÊ½´òÓ¡CBoolItem£¬½«½á¹û·ÅÈëcontainerÖĞ£¬ÆäÖĞCHAR_VEC±íÊ¾vector<char>ÈİÆ÷¡£depth±íÊ¾Ëõ½ø²ã´Î<br/>
+ä»¥å­—ç¬¦å½¢å¼æ‰“å°CBoolItemï¼Œå°†ç»“æœæ”¾å…¥containerä¸­ï¼Œå…¶ä¸­CHAR_VECè¡¨ç¤ºvector<char>å®¹å™¨ã€‚depthè¡¨ç¤ºç¼©è¿›å±‚æ¬¡<br/>
 <br/>
 **CNullItem:**<br/>
 `void Print(CHAR_VEC& container, int depth = 0)`<br/>
-ÒÔ×Ö·ûĞÎÊ½´òÓ¡CNullItem£¬½«½á¹û·ÅÈëcontainerÖĞ£¬ÆäÖĞCHAR_VEC±íÊ¾vector<char>ÈİÆ÷¡£depth±íÊ¾Ëõ½ø²ã´Î<br/>
+ä»¥å­—ç¬¦å½¢å¼æ‰“å°CNullItemï¼Œå°†ç»“æœæ”¾å…¥containerä¸­ï¼Œå…¶ä¸­CHAR_VECè¡¨ç¤ºvector<char>å®¹å™¨ã€‚depthè¡¨ç¤ºç¼©è¿›å±‚æ¬¡<br/>
