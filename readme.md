@@ -25,5 +25,8 @@ int main(){
 	return 0;
 }
 ```
-具体的使用方式见测试文件
+测试结果如下:<br/>
+[结果](/doc/result.png)
+
+具体的使用方式见doc/API.md文件
 --------
