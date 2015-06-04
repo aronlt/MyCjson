@@ -1,7 +1,7 @@
 ﻿#####MyCjson采用C++语言，使用C++11新特性，以及STL库等对CJson软件进行了重写，使得重写后的软件更具有OOP特性，而且也更方便使用和扩展。<br/>MyCjson采用google test单元测试框架进行了测试。
 
 ###如何使用？
-BaseItem:**<br/>
+**BaseItem:**<br/>
 `ParseRet PraseValue(const char *value);`<br/>
 将const char\*字符串解析成相应的Json格式<br/>
 <br/>
